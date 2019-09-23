@@ -1,4 +1,4 @@
-#Internship Work
+Internship Work
 ---
 
 **Author:** Johann

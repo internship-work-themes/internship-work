@@ -7,15 +7,21 @@
 //
 //   1. General
 //   2. Header Menu
+//   3. Footer
 
 @import "custom-variables";
+@import "../settings";
 
 //  1. General
 
 #page-container {
-  max-width: 80%;
+  @include breakpoint(xxlarge){
+    max-width: 80%;
+  }
+  max-width: 100%;
   margin: auto;
   background-color: $main-background-color;
+  box-shadow: 0 0 25px 0  $dm-gray;
 }
 
 
@@ -23,9 +29,9 @@
 
 .site-navigation.top-bar {
   ul {
-    background-color: white;
+    background-color: $white;
   }
-  background-color: white;
+  background-color: $white;
 }
 .site-navigation {
   #menu-header-menue {
@@ -39,7 +45,7 @@
       color: $dm-gray;
     }
     a:hover{
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
 }
@@ -58,3 +64,11 @@
 }
 
 
+//  3. Footer
+
+footer.footer-container{
+  background-color: $light-gray;
+  max-width: 100%;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}

@@ -8,8 +8,9 @@
 //   2. Digitalmobil Fonts
 //   3. Background
 
-//  The import of the local files didn't work. Decided to import the fonts from Google instead. 
+@import "../settings";
 
+//  The import of the local files didn't work. Decided to import the fonts from Google instead. 
 /*
 @import '../../mixins';
 @include font-face(Montserrat, fonts/Montserrat/Montserrat, 600, normal, ttf);
@@ -38,4 +39,4 @@ $info-text-font-family: 'Lato', sans-serif, light;
 
 
 //   3. Background
-$main-background-color: rgb(245, 245, 245);
+$main-background-color: $white;

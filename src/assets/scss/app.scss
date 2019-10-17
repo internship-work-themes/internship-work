@@ -7,8 +7,6 @@
 @import 'foundation';
 @import 'motion-ui';
 
-// Custom font-import
-@import 'custom/fonts';
 
 
 @include foundation-global-styles;
@@ -64,6 +62,12 @@
   Add your scss files below to structure your project styles
 */
 
+// Custom font-import
+@import 'custom/mixins';
+@import 'custom/fonts';
+@import "custom/custom-css";
+
+
 // Global
 @import "global/accessibility";
 @import "global/colors";
@@ -89,4 +93,3 @@
 @import "templates/kitchen-sink";
 
 // Custom Style
-@import "custom/custom-css";

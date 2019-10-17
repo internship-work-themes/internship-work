@@ -9,8 +9,6 @@
 //   2. Header Menu
 //   3. Footer
 
-@import "custom-variables";
-@import "../settings";
 
 //  1. General
 
@@ -43,6 +41,7 @@
     }
     a {
       font-family: $headlines-font-family;
+      font-weight: $headlines-font-weight;
       color: $dm-gray;
     }
     a:hover {

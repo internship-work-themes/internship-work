@@ -1,0 +1,8 @@
+//  
+//  Importing fonts from theme/fonts folder
+//  
+
+@include font-face("Montserrat", "../../../fonts/Montserrat-SemiBold", bold, normal);
+@include font-face("Lato", "../../../fonts/Lato-Regular", normal, normal);
+@include font-face("Lato", "../../../fonts/Lato-Light", lighter, normal);
+@include font-face("Lato", "../../../fonts/Lato-Bold", bold, normal);

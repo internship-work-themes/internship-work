@@ -1,9 +1,13 @@
 @charset 'utf-8';
 
+//  Custom variables, to overwrite foundation
+@import "custom/custom-variables";
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
+
+
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -58,8 +62,11 @@
   Add your scss files below to structure your project styles
 */
 
-// Custom Style
+// Custom font-import
+@import 'custom/mixins';
+@import 'custom/fonts';
 @import "custom/custom-css";
+
 
 // Global
 @import "global/accessibility";
@@ -84,3 +91,5 @@
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
+
+// Custom Style

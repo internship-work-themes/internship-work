@@ -26,3 +26,43 @@
 .nav-next {
   float:right;
 }
+
+//
+//  Custom area
+//  --------------------------------------
+
+.site-navigation.top-bar {
+  ul {
+    background-color: white;
+  }
+  background-color: white;
+}
+.site-navigation {
+  #menu-header-menue {
+    .menu-item-197 {
+      a {
+        color: $dm-blue;
+      }
+    }
+    a {
+      font-family: "Montserrat";
+      color: $dm-gray;
+    }
+    a:hover{
+      opacity: 0.8;
+    }
+  }
+}
+.logo {
+  padding-left: 40px;
+  width: 30%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.dropdown.menu {
+  li.is-dropdown-submenu-parent {
+    a::after {
+      border-color: $dm-blue transparent transparent;
+    }
+  }
+}

@@ -18,8 +18,8 @@
 @include font-face(Lato-bold, fonts/Lato/Lato-Bold);
 */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:600&display=swap');
-
+// @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:600&display=swap');
+// @import 'fonts';
 
 //   1. Digitalmobil Colors
 
@@ -31,10 +31,14 @@ $dm-cream-yellow: #f9da6e;
 
 //   2. Digitalmobil Fonts
 
-$headlines-font-family: 'Montserrat', sans-serif, semi-bold;
-$copy-text-font-family: 'Lato', sans-serif, normal;
-$hightlighted-copy-text-font-family: 'Lato', sans-serif, bold;
-$info-text-font-family: 'Lato', sans-serif, light;
+$headlines-font-family: "Montserrat";
+$main-font-family: "Lato";
+$headlines-font-weight: semibold;
+$highlighted-copy-text-font-weight: bold;
+$info-text-font-weight: light;
+// $info-text-font-family: "Lato", sans-serif;
+// $hightlighted-copy-text-font-family: "Lato", sans-serif;
+
 
 
 //   3. Background

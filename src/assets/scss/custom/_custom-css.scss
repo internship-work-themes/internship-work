@@ -8,7 +8,6 @@
 //   1. General
 //   2. Header Menu
 
-@import "custom-variables";
 
 //  1. General
 
@@ -36,6 +35,7 @@
     }
     a {
       font-family: $headlines-font-family;
+      font-weight: $headlines-font-weight;
       color: $dm-gray;
     }
     a:hover{

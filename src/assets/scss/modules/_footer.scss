@@ -21,3 +21,24 @@
     padding: 0;
   }
 }
+
+//Custom
+footer.footer-container {
+  font-family: $info-text-font-family;
+  font-weight: $info-text-font-weight;
+  line-height: 2rem;
+  background-color: $light-gray;
+  max-width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  .widget.widget_text {
+    margin: 5rem;
+  }
+  h6 {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  .textwidget {
+    font-size: 1.1rem;
+  }
+}

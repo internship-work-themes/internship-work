@@ -20,26 +20,28 @@
 }
 
 .nav-previous {
-  float:left;
+  float: left;
 }
 
 .nav-next {
-  float:right;
+  float: right;
 }
 
 //
 //  Custom area
 //  --------------------------------------
 
-.site-navigation.top-bar {
-  ul {
+.site-navigation {
+  &.top-bar {
+    ul {
+      background-color: white;
+    }
     background-color: white;
   }
-  background-color: white;
 }
 .site-navigation {
   #menu-header-menue {
-    .menu-item-197 {
+    .home-button {
       a {
         color: $dm-blue;
       }
@@ -48,7 +50,7 @@
       font-family: "Montserrat";
       color: $dm-gray;
     }
-    a:hover{
+    a:hover {
       opacity: 0.8;
     }
   }
@@ -58,11 +60,4 @@
   width: 30%;
   margin-top: 1%;
   margin-bottom: 1%;
-}
-.dropdown.menu {
-  li.is-dropdown-submenu-parent {
-    a::after {
-      border-color: $dm-blue transparent transparent;
-    }
-  }
 }

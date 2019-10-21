@@ -1,7 +1,9 @@
 @charset 'utf-8';
 
-//  Custom variables, to overwrite foundation
-@import "custom/custom-variables";
+//  Dependencies for _settings.scss:
+//  Global
+@import "global/colors";
+
 
 @import 'settings';
 @import 'foundation';
@@ -63,14 +65,12 @@
 */
 
 // Custom font-import
-@import 'custom/mixins';
-@import 'custom/fonts';
-@import "custom/custom-css";
+@import 'mixins';
+@import 'fonts';
 
 
 // Global
 @import "global/accessibility";
-@import "global/colors";
 @import "global/wp-admin";
 @import "global/wp-overrides";
 @import "global/gutenberg";

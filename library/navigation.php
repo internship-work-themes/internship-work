@@ -11,6 +11,7 @@ register_nav_menus(
 	array(
 		'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
 		'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
+		'footer-nav' => esc_html__( 'Footer Menu', 'foundationpress')
 	)
 );
 
@@ -55,6 +56,27 @@ if ( ! function_exists( 'foundationpress_mobile_nav' ) ) {
 		);
 	}
 }
+
+
+/**
+ * Footer navigation - footer navigation
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'custom_footer_nav' ) ) {
+	function custom_footer_nav() {
+		wp_nav_menu(
+			array(
+				'container'      => false,
+				'menu_class'     => 'menu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+				'theme_location' => 'footer-nav',
+				'fallback_cb'    => false,
+			)
+		);
+	}
+}
+
 
 
 /**

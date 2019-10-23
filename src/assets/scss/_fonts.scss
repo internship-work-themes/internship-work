@@ -3,6 +3,6 @@
 //  
 
 @include font-face("Montserrat", "../../../fonts/Montserrat-SemiBold", bold, normal);
-@include font-face("Lato", "../../../fonts/Lato-Light", lighter, normal);
+@include font-face("Lato", "../../../fonts/Lato-Light", 300, normal);
 @include font-face("Lato", "../../../fonts/Lato-Bold", bold, normal);
 @include font-face("Lato", "../../../fonts/Lato-Regular", normal, normal);

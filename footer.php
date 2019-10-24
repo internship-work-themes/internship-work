@@ -13,7 +13,7 @@
 <footer class="footer-container">
 	<div class="footer">
 		<div class="footer-grid row small-up-1 medium-up-2">
-				<?php dynamic_sidebar('footer-widgets'); ?>
+			<?php dynamic_sidebar('footer-widgets'); ?>
 		</div>
 
 		<div class="footer-menu row">
@@ -23,8 +23,9 @@
 		</div>
 	</div>
 
-	<div class="copyright social row">
-		<div>Copyright and Social Content!<p></p>
+	<div class="footer-bottom row">
+		<div class="social-media-horizontal column small-12 medium-4">
+			<?php social_media_icon('social-media-r'); ?>
 		</div>
 	</div>
 

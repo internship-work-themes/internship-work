@@ -93,7 +93,7 @@ function social_media_icon($theme_location)
         $menu = get_term($locations[$theme_location], 'nav_menu');
         $menu_items = wp_get_nav_menu_items($menu->term_id);
 
-        $menu_list = '<ul class="' .$theme_location. '">' . "\n";
+        $menu_list = '<ul class="' . $theme_location . '">' . "\n";
 
         $count = 0;
         $submenu = false;
@@ -104,25 +104,24 @@ function social_media_icon($theme_location)
             $title = $menu_item->title;
             $social = array("facebook", "instagram", "linkedin", "twitter", "rrd"); // list the used socialmedia names in this array
             $link_img = "";
-            $home_url = get_home_url() ;
+            $home_url = get_home_url();
             $i = 0;
 
 
-            for($i, $size = count($social); $i<$size; $i++){
+            for ($i, $size = count($social); $i < $size; $i++) {
                 $name = $social[$i];
 
                 if (strpos($link, $name) == true) {
-                    $link_img = ''. file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/$name.svg") .'';
+                    $link_img = '' . file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/$name.svg") . '';
                     //$link_img = '<img class="svg" src="' . $home_url . '/app/themes/internship-work/src/assets/images/icons/' . $name . '.svg" width=30px hight=auto';
                     $title = "";
                     break;
-                }
-                else{
-                    $link_img = ''. file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/error.svg") .'';
+                } else {
+                    $link_img = '' . file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/error.svg") . '';
                     //$link_img = '<img class="svg" src="' . $home_url . '/app/themes/internship-work/src/assets/images/icons/error.svg" width=30px hight=auto';
                 }
-            } 
-            
+            }
+
 
             if (!$menu_item->menu_item_parent) {
 

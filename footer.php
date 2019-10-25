@@ -24,9 +24,10 @@
 	</div>
 
 	<div class="footer-bottom row">
-		<div class="social-media-horizontal column small-12 medium-4">
+		<div class="social-media-horizontal">
 			<?php social_media_icon('social-media-r'); ?>
 		</div>
+		<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
 	</div>
 
 </footer>

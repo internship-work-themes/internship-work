@@ -45,21 +45,27 @@
   .footer-bottom {
     background-color: white;
     line-height: 3rem;
-    div{
+    div {
       vertical-align: middle;
     }
     .footer-info {
       color: $dm-slate-gray;
       font-weight: 300;
-      float: left;
+      text-align: center;
+      margin-bottom: 2rem;
+      @include breakpoint(medium) {
+        color: $dm-slate-gray;
+        font-weight: 300;
+        float: left;
+        margin-bottom: 0rem;
+      }
     }
     .social-media-horizontal {
-      float: right;
       ul {
         list-style: none;
-        margin-bottom: 0rem;
+        margin: 0rem;
+        text-align: center;
         li {
-          margin-left: 1rem;
           display: inline;
           svg {
             width: 30px;
@@ -70,9 +76,26 @@
           }
         }
       }
+      @include breakpoint(medium) {
+        float: right;
+        ul {
+          list-style: none;
+          margin-bottom: 0rem;
+          li {
+            margin-left: 1rem;
+            display: inline;
+            svg {
+              width: 30px;
+              height: 30px;
+              path {
+                fill: $dm-blue;
+              }
+            }
+          }
+        }
+      }
     }
   }
-
 }
 
 //

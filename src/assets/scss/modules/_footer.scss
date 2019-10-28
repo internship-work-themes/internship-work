@@ -8,12 +8,12 @@
     .footer-grid {
       margin-top: 3rem;
       margin-bottom: 2rem;
-      .column{
+      .column {
         padding: 0rem;
-        h6{
+        h6 {
           font-size: 120%;
         }
-        .textwidget{
+        .textwidget {
           font-weight: 300;
           font-size: 110%;
         }
@@ -21,7 +21,7 @@
     }
     .footer-menu {
       font-weight: bold;
-      .column{
+      .column {
         padding: 0rem;
         padding-bottom: 1rem;
       }
@@ -41,9 +41,59 @@
         }
       }
     }
-    .copyright {
-      background-color: white;
-      width: 100%;
+  }
+  .footer-bottom {
+    background-color: white;
+    line-height: 3rem;
+    div {
+      vertical-align: middle;
+    }
+    .footer-info {
+      color: $dm-slate-gray;
+      font-weight: 300;
+      text-align: center;
+      margin-bottom: 2rem;
+      @include breakpoint(medium) {
+        color: $dm-slate-gray;
+        font-weight: 300;
+        float: left;
+        margin-bottom: 0rem;
+      }
+    }
+    .social-media-horizontal {
+      ul {
+        list-style: none;
+        margin: 0rem;
+        text-align: center;
+        li {
+          display: inline;
+          svg {
+            width: 30px;
+            height: 30px;
+            path {
+              fill: $dm-blue;
+            }
+          }
+        }
+      }
+      @include breakpoint(medium) {
+        float: right;
+        ul {
+          list-style: none;
+          margin-bottom: 0rem;
+          li {
+            margin-left: 1rem;
+            display: inline;
+            svg {
+              width: 30px;
+              height: 30px;
+              path {
+                fill: $dm-blue;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,12 +1,16 @@
+[![Digitalmobil Logo](src/assets/images/Logo_digitalmobil_4C.png)](https://www.digitalmobil.com/)
+
 # Internship-Work Theme
 ## Based on FoundationPress
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![GitHub version](https://badge.fury.io/gh/olefredrik%2Ffoundationpress.svg)](https://github.com/olefredrik/FoundationPress/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This theme is using WordPress, based on Zurb's [Foundation for Sites 6](https://foundation.zurb.com/sites.html). 
 For a more efficent developing envirenment I used the boilerplate [Bedrock](https://roots.io/bedrock/).
 
 ## Theme for digitalmobil-Website
-TODO
+
+
+This is the Theme for the Instance [Internship-Work](https://gitlab.com/digitalmobil_internship/themes/internship-work). <br>
+<br>
+You can find the description how to install everything you need to get started on this project [here](https://gitlab.com/digitalmobil_internship/themes/internship-work)!
+

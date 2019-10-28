@@ -10,7 +10,7 @@ For a more efficent developing envirenment I used the boilerplate [Bedrock](http
 ## Theme for digitalmobil-Website
 
 
-This is the Theme for the Instance [Internship-Work](https://gitlab.com/digitalmobil_internship/themes/internship-work). <br>
+This is the Theme for the Instance [Internship-Work](https://gitlab.com/digitalmobil_internship/instances/internship-work). <br>
 <br>
-You can find the description how to install everything you need to get started on this project [here](https://gitlab.com/digitalmobil_internship/themes/internship-work)!
+You can find the description how to install everything you need to get started on this project [here](https://gitlab.com/digitalmobil_internship/instances/internship-work)!
 

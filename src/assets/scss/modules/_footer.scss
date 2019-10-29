@@ -7,9 +7,9 @@
     max-width: 100%;
     .footer-grid {
       margin-top: 3rem;
-      margin-bottom: 2rem;
       .column {
         padding: 0rem;
+        margin-bottom: 2rem;
         h6 {
           font-size: 120%;
         }
@@ -67,6 +67,7 @@
         text-align: center;
         li {
           display: inline;
+          margin-right: 1rem;
           svg {
             width: 30px;
             height: 30px;

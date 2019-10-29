@@ -12,11 +12,11 @@
 
 <footer class="footer-container">
 	<div class="footer">
-		<div class="footer-grid row small-up-1 medium-up-2">
+		<div class="footer-grid row small-10 medium-up-2">
 			<?php dynamic_sidebar('footer-widgets'); ?>
 		</div>
 
-		<div class="footer-menu row">
+		<div class="footer-menu row small-10 medium-12">
 			<div class="column">
 				<?php custom_footer_nav(); ?>
 			</div>

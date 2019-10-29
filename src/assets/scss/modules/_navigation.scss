@@ -30,34 +30,49 @@
 //
 //  Custom area
 //  --------------------------------------
-
-.site-navigation {
-  &.top-bar {
+.site-header {
+  position: sticky;
+  top: 0rem;
+  width: 100%;
+  z-index: 999;
+  .site-navigation {
+    transition: 0.4s;
+    padding: 0.5rem 0;
+    margin: 0 2rem;
+    &.scrolled-up{
+      padding: 0.5rem 0;
+    }
+    &.scrolled-down{
+      padding: 0rem 0;
+    }
+    background-color: white;
     ul {
       background-color: white;
     }
-    background-color: white;
-  }
-}
-.site-navigation {
-  #menu-header-menue {
-    .home-button {
+    #menu-header-menue {
+      .home-button {
+        a {
+          color: $dm-blue;
+        }
+      }
       a {
-        color: $dm-blue;
+        font-family: "Montserrat";
+        color: $dm-gray;
+      }
+      a:hover {
+        opacity: 0.6;
       }
     }
-    a {
-      font-family: "Montserrat";
-      color: $dm-gray;
-    }
-    a:hover {
-      opacity: 0.6;
+    #logo-desktop{
+      padding-left: 2rem;
+      width: 30%;
+      transition: 0.4s;
+      &.scrolled-up{
+        width: 35%;
+      }
+      &.scrolled-down{
+        width: 25%;
+      }
     }
   }
-}
-.logo {
-  padding-left: 40px;
-  width: 30%;
-  margin-top: 1%;
-  margin-bottom: 1%;
 }

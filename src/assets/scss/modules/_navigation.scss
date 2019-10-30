@@ -31,17 +31,13 @@
 //  Custom area
 //  --------------------------------------
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0rem;
-  width: 100%;
+  height: 80px;
+  width: 85%;
   z-index: 999;
   .site-navigation {
     transition: 0.4s;
-    padding: 0.5rem 0;
-    margin: 0 2rem;
-    &.scrolled-up{
-      padding: 0.5rem 0;
-    }
     &.scrolled-down{
       padding: 0rem 0;
     }
@@ -68,10 +64,10 @@
       width: 30%;
       transition: 0.4s;
       &.scrolled-up{
-        width: 35%;
+        width: 30%;
       }
       &.scrolled-down{
-        width: 25%;
+        width: 20%;
       }
     }
   }

@@ -211,6 +211,7 @@
     max-width: 85%;
   }
   max-width: 100%;
-  margin: auto;
+  margin: -20px auto 0;
+  padding-top: 100px; // Size of Nav-Bar (80px) + negative margin of this container 
   box-shadow: 0 0 25px 0 $dm-gray;
 }

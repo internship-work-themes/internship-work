@@ -28,7 +28,7 @@
 		<header class="site-header" role="banner">
 			<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
 				<div class="title-bar-left">
-					<button aria-label="<?php _e('Main Menu', 'foundationpress'); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+					<span class="mobile-menu-icon" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></span>
 					<span class="site-mobile-title title-bar-title">
 						<div id="logo" class="site-logo">
 							<?php

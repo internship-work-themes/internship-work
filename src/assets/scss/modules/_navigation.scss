@@ -31,44 +31,90 @@
 //  Custom area
 //  --------------------------------------
 .site-header {
+  // Style for Mobile Navigation Menu
+  @include xy-cell(12);
+  margin: 0;
   position: fixed;
   top: 0rem;
   height: 80px;
-  width: 85%;
   z-index: 999;
-  .site-navigation {
-    transition: 0.4s;
-    &.scrolled-down{
-      padding: 0rem 0;
+  background-color: $white;
+  .site-title-bar {
+    @include xy-grid(12);
+    margin: 1rem 0;
+    .title-bar-left{
+      @include xy-cell(10);
+      margin: auto;
     }
-    background-color: white;
-    ul {
-      background-color: white;
+    padding: 0;
+    height: 60px;
+    background-color: $white;
+    .mobile-menu-icon {
+      float: right;
+      &:before {
+        font-family: "dashicons";
+        content: "\f333";
+        color: $dm-blue;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        font-size: 32px;
+        cursor: pointer;
+        z-index: 1000;
+      }
     }
-    #menu-header-menue {
-      .home-button {
+    .logo {
+      height: 50px;
+    }
+  }
+  .site-navigation{
+    background-color: $white;
+    ul{
+      background-color: $white;
+    }
+  }
+  // Desktop Navigation Style
+  @include breakpoint(xxlarge){
+    @include xy-cell(10);
+  }
+  @include breakpoint(medium) {
+    margin: 0;
+    height: 80px;
+    background-color: transparent;
+    .site-navigation {
+      transition: 0.4s;
+      @include xy-grid;
+      &.scrolled-down {
+        padding: 0rem 0;
+      }
+      #menu-header-menue {
+        .home-button {
+          a {
+            color: $dm-blue;
+          }
+        }
         a {
-          color: $dm-blue;
+          font-family: "Montserrat";
+          color: $dm-gray;
+        }
+        a:hover {
+          opacity: 0.6;
         }
       }
-      a {
-        font-family: "Montserrat";
-        color: $dm-gray;
-      }
-      a:hover {
-        opacity: 0.6;
-      }
-    }
-    #logo-desktop{
-      padding-left: 2rem;
-      width: 30%;
-      transition: 0.4s;
-      &.scrolled-up{
-        width: 30%;
-      }
-      &.scrolled-down{
-        width: 20%;
+      #logo-desktop {
+        padding-left: 2rem;
+        width: 200px;
+        transition: 0.4s;
+        &.scrolled-up {
+          width: 200px;
+        }
+        &.scrolled-down {
+          width: 150px;
+        }
       }
     }
   }
 }
+
+//  Mobile Menu Style

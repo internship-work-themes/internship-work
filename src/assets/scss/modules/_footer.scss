@@ -1,25 +1,45 @@
+.cell {
+  margin: auto;
+}
 .footer-container {
+  @include xy-cell;
+  margin: rem-calc(60) 0 0;
   .footer {
+    @include xy-grid;
     background-color: $light-gray;
     border-top: 2px solid $medium-gray;
-    margin-top: rem-calc(60);
     margin-bottom: 1rem;
-    max-width: 100%;
-    .footer-grid {
-      margin-top: 3rem;
-      .column {
-        padding: 0rem;
-        margin-bottom: 2rem;
-        h6 {
-          font-size: 120%;
+    padding: 3rem 0 0.5rem;
+    .widget-container{
+      @include xy-cell(10);
+      margin: auto;
+      @include breakpoint(medium){
+        @include xy-cell(8);
+        margin: auto;
+      }
+      .footer-grid {
+        @include xy-grid;
+        @include xy-grid-layout(1, ".widget");
+        @include breakpoint(medium) {
+          @include xy-grid-layout(2, ".widget");
         }
-        .textwidget {
-          font-weight: 300;
-          font-size: 110%;
+        .cell {
+          padding: 0rem;
+          margin: 0 0 2rem;
+          h6 {
+            font-size: 120%;
+          }
+          .textwidget {
+            font-weight: 300;
+            font-size: 110%;
+          }
         }
       }
     }
+    
     .footer-menu {
+      @include xy-cell;
+      margin: 0;
       font-weight: bold;
       .column {
         padding: 0rem;
@@ -43,6 +63,11 @@
     }
   }
   .footer-bottom {
+    @include xy-cell(10);
+    @include breakpoint(medium){
+      @include xy-cell(8);
+      margin: auto;
+    }   
     background-color: white;
     line-height: 3rem;
     div {

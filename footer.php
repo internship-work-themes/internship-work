@@ -12,21 +12,24 @@
 
 <footer class="footer-container">
 	<div class="footer">
-		<div class="footer-grid row small-10 medium-up-2">
-			<?php dynamic_sidebar('footer-widgets'); ?>
-		</div>
+		<div class="widget-container">
+			<div class="footer-grid">
+				<?php dynamic_sidebar('footer-widgets'); ?>
+			</div>
 
-		<div class="footer-menu row small-10 medium-12">
-			<div class="column">
-				<?php custom_footer_nav(); ?>
+			<div class="footer-menu">
+				<div class="footer-nav">
+					<?php custom_footer_nav(); ?>
+				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="footer-bottom row">
+	
+	<div class="footer-bottom cell medium-8">
 		<div class="social-media-horizontal">
 			<?php load_social_icon_menu(); ?>
-			<?php //social_media_icon('social-media-r'); ?>
+			<?php //social_media_icon('social-media-r'); 
+			?>
 		</div>
 		<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
 	</div>

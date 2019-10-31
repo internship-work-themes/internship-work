@@ -16,7 +16,7 @@ $(document).foundation();
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
     document.getElementById("mobile-menu").className = "site-navigation top-bar scrolled-down";
     document.getElementById("logo-desktop").className = "site-logo scrolled-down";
 

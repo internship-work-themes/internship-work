@@ -113,11 +113,12 @@ function load_social_icon_menu()
             $name = get_sub_field('social_media_platform');
             $link_array = get_sub_field('social_media_url');
             $link = $link_array['url'];
+            $link_target = $link_array['target'];
             $svg_url = '' . get_home_url() . '/app/themes/internship-work/src/assets/images/icons/' . $name . '.svg';
 
             $icon_list .= '<li class="icon-element">';
             if ($link) :
-                $icon_list .= '<a class ="icon" href="' . $link . '">';
+                $icon_list .= '<a class ="icon" href="' . $link . '" target="'. $link_target .'">';
             endif;
 
             $icon_list .= '' . file_get_contents($svg_url) . '';

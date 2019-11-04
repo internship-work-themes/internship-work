@@ -32,7 +32,7 @@
 //  --------------------------------------
 .site-header {
   // Style for Mobile Navigation Menu
-  @include xy-cell(12);
+  @include xy-cell(full);
   margin: 0;
   position: fixed;
   top: 0rem;
@@ -40,7 +40,7 @@
   z-index: 999;
   background-color: $white;
   .site-title-bar {
-    @include xy-grid(12);
+    @include xy-grid(full);
     margin: 1rem 0;
     .title-bar-left{
       @include xy-cell(10);

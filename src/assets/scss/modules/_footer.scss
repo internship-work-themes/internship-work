@@ -2,7 +2,6 @@
   margin: auto;
 }
 .footer-container {
-  @include xy-cell;
   margin: rem-calc(60) 0 0;
   .footer {
     @include xy-grid;
@@ -21,7 +20,7 @@
         @include xy-grid;
         @include xy-grid-layout(1, ".widget");
         @include breakpoint(medium) {
-          @include xy-grid-layout(2, ".widget");
+          @include xy-grid-layout(2, ".widget", null, 1rem, padding);
         }
         .cell {
           padding: 0rem;
@@ -64,6 +63,7 @@
   }
   .footer-bottom {
     @include xy-cell(10);
+    margin: auto;
     @include breakpoint(medium){
       @include xy-cell(8);
       margin: auto;
@@ -124,6 +124,3 @@
   }
 }
 
-//
-//  Custom area
-//  --------------------------------------

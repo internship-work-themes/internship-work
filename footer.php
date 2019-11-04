@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	
-	<div class="footer-bottom cell medium-8">
+	<div class="footer-bottom">
 		<div class="social-media-horizontal">
 			<?php load_social_icon_menu(); ?>
 			<?php //social_media_icon('social-media-r'); 

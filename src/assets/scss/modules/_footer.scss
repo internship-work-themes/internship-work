@@ -8,7 +8,7 @@
     background-color: $light-gray;
     border-top: 2px solid $medium-gray;
     margin-bottom: 1rem;
-    padding: 3rem 0 0.5rem;
+    padding: 3rem 0 2rem;
     .widget-container{
       @include xy-cell(10);
       margin: auto;
@@ -18,13 +18,13 @@
       }
       .footer-grid {
         @include xy-grid;
-        @include xy-grid-layout(1, ".widget");
+        @include xy-grid-layout(1, ".cell");
         @include breakpoint(medium) {
-          @include xy-grid-layout(2, ".widget", null, 1rem, padding);
+          @include xy-grid-layout(2, ".cell", true, 3rem, margin, right);
         }
         .cell {
           padding: 0rem;
-          margin: 0 0 2rem;
+          margin: 0 auto 2rem 0;
           h6 {
             font-size: 120%;
           }

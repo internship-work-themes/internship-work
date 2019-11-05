@@ -27,7 +27,7 @@
 	
 	<div class="footer-bottom">
 		<div class="social-media-horizontal">
-			<?php load_social_icon_menu(); ?>
+			<?php echo get_social_icon_menu(); ?>
 			<?php //social_media_icon('social-media-r'); 
 			?>
 		</div>

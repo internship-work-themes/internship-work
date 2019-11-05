@@ -101,7 +101,7 @@ function create_acf_social_media_options_page()
 add_action('acf/init', 'create_acf_social_media_options_page');
 
 /** Load Social Media Icon Menü */
-function load_social_icon_menu()
+function get_social_icon_menu()
 {
     if (have_rows('social_media_footer_repeater', 'option')) :
 
@@ -134,12 +134,12 @@ function load_social_icon_menu()
         $icon_list = "Error loading Social Media Menu Icons!";
     endif;
 
-    echo $icon_list;
+    return $icon_list;
 }
 
 //Enqueue the Dashicons script
-add_action('wp_enqueue_scripts', 'load_dashicons_front_end');
 function load_dashicons_front_end()
 {
     wp_enqueue_style('dashicons');
 }
+add_action('wp_enqueue_scripts', 'load_dashicons_front_end');

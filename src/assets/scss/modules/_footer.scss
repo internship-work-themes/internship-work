@@ -8,9 +8,6 @@
 .footer-t {
   margin: auto;
   padding: 4rem 0;
-  .contact {
-    padding: 0 0 1rem 0;
-  }
   .widget_text {
     margin-bottom: 2rem;
   }
@@ -50,11 +47,22 @@
 //  Footer Social Box BOTTOM
 .footer-b {
   margin: auto;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   background-color: white;
   line-height: 3rem;
+
+  @include breakpoint(medium){
+    padding: 0.5rem 0;
+  }
+
   .social-b {
     margin: auto;
+
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -65,45 +73,40 @@
   text-align: center;
   margin-bottom: 2rem;
   @include breakpoint(medium) {
-    float: left;
     margin-bottom: 0rem;
+    order: 1;
   }
 }
 
 //  Social Media Icons styling
 .social-media-horizontal {
+  height: rem-calc(30);
+  @include breakpoint(medium) {
+      justify-content: right;
+      order: 2;
+    }
+
   ul {
     list-style: none;
     margin: 0rem;
     text-align: center;
     li {
-      display: inline;
       margin-right: 1rem;
-      svg {
-        width: rem-calc(30);
-        height: rem-calc(30);
-        path {
-          fill: $dm-blue;
-        }
-      }
+      display: inline-block;
+      max-width: rem-calc(30);
+      max-height: rem-calc(30);
     }
   }
-  @include breakpoint(medium) {
-    float: right;
-    ul {
-      list-style: none;
-      margin-bottom: 0rem;
-      li {
-        margin-left: 1rem;
-        display: inline;
-        svg {
-          width: rem-calc(30);
-          height: rem-calc(30);
-          path {
-            fill: $dm-blue;
-          }
-        }
-      }
+  .icon {
+    display: inline-block;
+    max-width: rem-calc(30);
+    max-height: rem-calc(30);
+  }
+  svg {
+    max-width: rem-calc(30);
+    max-height: rem-calc(30);
+    path {
+      fill: $dm-blue;
     }
   }
 }

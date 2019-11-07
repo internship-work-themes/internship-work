@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -15,35 +16,43 @@
 
 get_header(); ?>
 
-<div class="main-container">
-	<div class="main-grid">
-		<main class="main-content">
-		<?php if ( have_posts() ) : ?>
+<div class="main-container cell small-10">
+	<div class="main-content-grid grid-x grid-padding-x">
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-			<?php endwhile; ?>
+		<div class="cell medium-9">
+			<main class="main-content">
+				<?php if (have_posts()) : ?>
 
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					<?php /* Start the Loop */ ?>
+					<?php while (have_posts()) : the_post(); ?>
+						<?php get_template_part('template-parts/content', get_post_format()); ?>
+					<?php endwhile; ?>
 
-			<?php endif; // End have_posts() check. ?>
+				<?php else : ?>
+					<?php get_template_part('template-parts/content', 'none'); ?>
 
-			<?php /* Display navigation to next/previous pages when applicable */ ?>
-			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
-			elseif ( is_paged() ) :
-			?>
-				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-				</nav>
-			<?php endif; ?>
+				<?php endif; // End have_posts() check. 
+				?>
 
-		</main>
-		<?php get_sidebar(); ?>
+				<?php /* Display navigation to next/previous pages when applicable */ ?>
+				<?php
+				if (function_exists('foundationpress_pagination')) :
+					foundationpress_pagination();
+				elseif (is_paged()) :
+					?>
+					<nav id="post-nav">
+						<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
+						<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
+					</nav>
+				<?php endif; ?>
+
+			</main>
+		</div>
+
+
+		<div class="cell medium-3">
+			<?php get_sidebar(); ?>
+		</div>
 
 	</div>
 </div>

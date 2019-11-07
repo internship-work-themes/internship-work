@@ -10,28 +10,39 @@
  */
 ?>
 
-<footer class="footer-container">
-	<div class="footer">
-		<div class="widget-container">
-			<div class="footer-grid">
-				<?php dynamic_sidebar('footer-widgets'); ?>
-			</div>
+<footer class="footer-container cell full">
 
-			<div class="footer-menu">
-				<div class="footer-nav">
-					<?php custom_footer_nav(); ?>
+	<div class="footer grid-x">
+
+		<div class="footer-t cell small-10">
+			<div class="contact grid-x">
+
+				<div class="cell">
+					<div class="grid-x grid-padding-x small-up-1 medium-up-2">
+
+						<?php dynamic_sidebar('footer-widgets'); ?>
+						<div class="footer-nav cell">
+							<?php custom_footer_nav(); ?>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="footer-b cell full">
+			<div class="grid-x grid-padding-x">
+				<div class="social-b cell small-10">
+					<div class="social-media-horizontal">
+						<?php echo get_social_icon_menu(); ?>
+					</div>
+					<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div class="footer-bottom">
-		<div class="social-media-horizontal">
-			<?php echo get_social_icon_menu(); ?>
-			<?php //social_media_icon('social-media-r'); 
-			?>
-		</div>
-		<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
+
 	</div>
 
 </footer>
@@ -41,6 +52,7 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+</div> <!-- Close grid-y container -->
 </div> <!-- Close div page-container -->
 </body>
 

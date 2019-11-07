@@ -70,8 +70,6 @@ function theme_custom_logo_setup()
     $defaults = array(
         'height' => 150,
         'width' => 150,
-        'flex-height' => true,
-        'flex-width' => true,
         'header-text' => array('site-title', 'site-description'),
     );
 

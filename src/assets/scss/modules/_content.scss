@@ -2,35 +2,37 @@
 // Style for the index.php
 //
 #page-container {
-  @include xy-grid;
-  margin: -20px auto 0;
-  padding-top: 100px; // Size of Nav-Bar (80px) + negative margin of this container 
-  box-shadow: 0 0 25px 0 $dm-gray;
-
-  @include breakpoint(xxlarge){
-    @include xy-grid;
-    @include xy-cell(10);
-    margin: auto;
-  }
+  margin: rem-calc(-10) auto;
+  padding-top: rem-calc(90); // Size of Nav-Bar (80px) + negative margin of this container 
+  box-shadow: 0 0 rem-calc(25) 0 $dm-gray;
 }
 
-.main-container {
-  @include xy-cell(10);
+.main-container{
   margin: auto;
-  @include breakpoint(large){
-    @include xy-cell(8);
-    margin: auto;
-  }
 }
 
 .main-grid {
-  @include xy-grid;
-  margin-top: 1rem;
+  margin: auto;
+  padding-top: 3rem;
 
-  @include breakpoint(medium) {
-    margin-top: 3rem;
+  .main-content{
+    margin: 0;
   }
+  .main-sidebar{
+    margin: 0;
+  }
+  
+  /* .sidebar{
+    @include breakpoint(small) {
+      @include xy-cell(12);
+    }
 
+    @include breakpoint(large) {
+      @include xy-cell(4);
+      margin-top: 1rem;
+    }
+  } */
+/* 
   &.sidebar-left {
     // Place the sidebar below main content on small screens ...
     @include breakpoint(small) {
@@ -71,5 +73,5 @@
       margin-top: 1rem;
     }
 
-  }
+  } */
 }

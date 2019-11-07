@@ -30,90 +30,95 @@
 //
 //  Custom area
 //  --------------------------------------
+
+// Style for Mobile Navigation Menu
 .site-header {
-  // Style for Mobile Navigation Menu
-  @include xy-cell(full);
-  margin: 0;
   position: fixed;
   top: 0rem;
-  height: 80px;
+  height: rem-calc(80);
   z-index: 999;
   background-color: $white;
-  .site-title-bar {
-    @include xy-grid(full);
-    margin: 1rem 0;
-    .title-bar-left{
-      @include xy-cell(10);
-      margin: auto;
-    }
-    padding: 0;
-    height: 60px;
+}
+
+.site-navigation {
+  background-color: $white;
+  ul {
     background-color: $white;
-    .mobile-menu-icon {
-      float: right;
-      &:before {
-        font-family: "dashicons";
-        content: "\f333";
-        color: $dm-blue;
-        position: relative;
-        top: 0;
-        left: 0;
-        display: inline-block;
-        font-size: 32px;
-        cursor: pointer;
-        z-index: 1000;
-      }
-    }
-    .logo {
-      height: 50px;
-    }
-  }
-  .site-navigation{
-    background-color: $white;
-    ul{
-      background-color: $white;
-    }
-  }
-  // Desktop Navigation Style
-  @include breakpoint(xxlarge){
-    @include xy-cell(10);
-  }
-  @include breakpoint(medium) {
-    margin: 0;
-    height: 80px;
-    background-color: transparent;
-    .site-navigation {
-      transition: 0.4s;
-      @include xy-grid;
-      &.scrolled-down {
-        padding: 0rem 0;
-      }
-      #menu-header-menue {
-        .home-button {
-          a {
-            color: $dm-blue;
-          }
-        }
-        a {
-          font-family: "Montserrat";
-          color: $dm-gray;
-        }
-        a:hover {
-          opacity: 0.6;
-        }
-      }
-      #logo-desktop {
-        padding-left: 2rem;
-        width: 200px;
-        transition: 0.4s;
-        &.scrolled-up {
-          width: 200px;
-        }
-        &.scrolled-down {
-          width: 150px;
-        }
-      }
-    }
   }
 }
 
+.site-title-bar {
+  margin: 1rem auto;
+  .title-bar-left {
+    margin: auto;
+  }
+  padding: 0;
+  height: rem-calc(50);
+  background-color: $white;
+  
+}
+
+.mobile-menu-icon {
+  float: right;
+  &:before {
+    font-family: "dashicons";
+    content: "\f333";
+    color: $dm-blue;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    font-size: rem-calc(32);
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+.logo {
+  width: $logo-width-large;
+}
+
+// Desktop Navigation Style
+@include breakpoint(medium) {
+  .site-header {
+    margin: auto;
+    height: rem-calc(80);
+    background-color: transparent;
+    .site-navigation {
+      transition: 0.4s;
+      &.scrolled-down {
+        padding: 0rem 0;
+      }
+    }
+  }
+
+  // Desktop Menu Navigation Area right
+  #menu-header-menue {
+    .home-button {
+      a {
+        color: $dm-blue;
+      }
+    }
+    a {
+      font-family: "Montserrat";
+      color: $dm-gray;
+    }
+    a:hover {
+      opacity: 0.6;
+    }
+  }
+
+  // Desktop Menu Logo left Container
+  #logo-desktop{
+    padding-left: 2rem;
+    transition: 0.4s;
+    width: $logo-width-large;
+    &.scrolled-down {
+      width: $logo-width-small;
+    }
+  }
+  .logo{
+    width: 100%;    // Defines logo-image width
+    height: auto;
+  }
+}

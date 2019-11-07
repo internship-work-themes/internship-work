@@ -27,9 +27,6 @@
   float: right;
 }
 
-//
-//  Custom area
-//  --------------------------------------
 
 // Style for Mobile Navigation Menu
 .site-header {
@@ -80,6 +77,7 @@
 
 // Desktop Navigation Style
 @include breakpoint(medium) {
+
   .site-header {
     margin: auto;
     height: rem-calc(80);
@@ -92,7 +90,7 @@
     }
   }
 
-  // Desktop Menu Navigation Area right
+  // Desktop Menu Navigation right container
   #menu-header-menue {
     .home-button {
       a {
@@ -108,7 +106,7 @@
     }
   }
 
-  // Desktop Menu Logo left Container
+  // Desktop Menu Logo left container
   #logo-desktop{
     padding-left: 2rem;
     transition: 0.4s;

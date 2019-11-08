@@ -1,24 +1,40 @@
 //
-// Style for the index.php
-//
-#page-container {
-  margin: rem-calc(-10) auto;
-  padding-top: rem-calc(90); // Size of Nav-Bar (80px) + negative margin of this container
-  box-shadow: 0 0 rem-calc(25) 0 $dm-gray;
-}
+//  Style for the index.php
+//  ------------------------------------------------------------------------------------------------
+.content-container {
+  padding: rem-calc(120) 0 rem-calc(60); // The first rem-calc="padding-top" -> Size of Nav-Bar (80px) + distance from Menu-Slider
 
-.main-grid {
-  margin: auto;
-  padding-top: 3rem;
-
-  .main-content {
-    margin: 0;
+  @include breakpoint(medium){
+    padding: rem-calc(140) 0 rem-calc(60); // The first rem-calc="padding-top" -> Size of Nav-Bar (80px) + distance from Menu-Slider
+    box-shadow: 0 0 rem-calc(25) 0 $dm-gray;
   }
-  .main-sidebar {
-    margin: 0;
+
+  .content-grid-container{
+    margin: auto;
   }
 }
 
-.main-container {
-  margin: auto;
+
+//  Different styling for the page.php
+//  ------------------------------------------------------------------------------------------------
+.page-content{
+  margin-bottom: 6rem;
+}
+
+//  Different styling for the single.php (Post Template)
+//  ------------------------------------------------------------------------------------------------
+.post-comments{
+  margin: 6rem 0 3rem;
+}
+
+//  Different styling for the search.php
+//  ------------------------------------------------------------------------------------------------
+#search-results{
+  margin-bottom: 6rem;
+  .entry-title{
+    margin-bottom: 1rem;
+  }
+  article{
+    margin: 3rem 0;
+  }
 }

@@ -29,6 +29,7 @@
 
 
 // Style for Mobile Navigation Menu
+//  ------------------------------------------------------------------------------------------------
 .site-header {
   position: fixed;
   top: 0rem;
@@ -36,14 +37,8 @@
   z-index: 999;
   background-color: $white;
 }
-
-.site-navigation {
-  background-color: $white;
-  ul {
-    background-color: $white;
-  }
-}
-
+//  Mobile Logo and Menu-Icon Container
+//  -----------------------------------
 .site-title-bar {
   margin: 1rem auto;
   .title-bar-left {
@@ -54,7 +49,8 @@
   background-color: $white;
   
 }
-
+//  Mobile Menu Icon Styleing
+//  -------------------------
 .mobile-menu-icon {
   float: right;
   &:before {
@@ -70,16 +66,27 @@
     z-index: 1000;
   }
 }
-
+//  Mobile Menu Logo Styling
+//  ------------------------
 .logo {
   width: $logo-width-large;
 }
+//  Expandet Menu Style
+//  -------------------
+.site-navigation {
+  margin-top: rem-calc(-2);
+  background-color: $white;
+  ul {
+    background-color: $white;
+  }
+}
+
 
 // Desktop Navigation Style
+//  ------------------------------------------------------------------------------------------------
 @include breakpoint(medium) {
 
   .site-header {
-    margin: auto;
     height: rem-calc(80);
     background-color: transparent;
     .site-navigation {
@@ -89,8 +96,22 @@
       }
     }
   }
-
+  // Desktop Menu Logo (left container)
+  // ---------------------------------
+  #logo-desktop{
+    padding-left: 2rem;
+    transition: 0.4s;
+    width: $logo-width-large;
+    &.scrolled-down {
+      width: $logo-width-small;
+    }
+  }
+  .logo{
+    width: 100%;    // Defines logo-image width
+    height: auto;
+  }
   // Desktop Menu Navigation right container
+  // ---------------------------------------
   #menu-header-menue {
     .home-button {
       a {
@@ -106,17 +127,5 @@
     }
   }
 
-  // Desktop Menu Logo left container
-  #logo-desktop{
-    padding-left: 2rem;
-    transition: 0.4s;
-    width: $logo-width-large;
-    &.scrolled-down {
-      width: $logo-width-small;
-    }
-  }
-  .logo{
-    width: 100%;    // Defines logo-image width
-    height: auto;
-  }
+
 }

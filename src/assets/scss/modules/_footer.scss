@@ -1,16 +1,18 @@
 .footer-container {
-  margin: rem-calc(60) 0 0;
   background-color: $light-gray;
   border-top: rem-calc(2) solid $medium-gray;
 }
 
+
 //  Footer Contact Area TOP
+//  ------------------------------------------------------------------------------------------------
 .footer-t {
-  margin: auto;
   padding: 4rem 0;
-  .widget_text {
-    margin-bottom: 2rem;
-  }
+}
+//  ------
+//  Widget
+.widget_text {
+  margin-bottom: 2rem;
   h6 {
     font-size: 120%;
   }
@@ -19,34 +21,34 @@
     font-size: 110%;
   }
 }
-
+//  -----------------
 //  Footer Navigation
 .footer-nav {
-  margin: 0;
   font-weight: bold;
   ul {
     li {
       padding-right: 1.5rem;
-    }
-    a {
-      padding: 0rem;
-      font-size: 120%;
-    }
-    a:hover {
-      opacity: 0.6;
-    }
-    .is-active {
       a {
-        background-color: transparent;
-        color: $dm-blue;
+        padding: 0rem;
+        font-size: 120%;
+      }
+      a:hover {
+        opacity: 0.6;
+      }
+      .is-active {
+        a {
+          background-color: transparent;
+          color: $dm-blue;
+        }
       }
     }
   }
 }
 
+
 //  Footer Social Box BOTTOM
+//  ------------------------------------------------------------------------------------------------
 .footer-b {
-  margin: auto;
   padding: 1rem 0;
   background-color: white;
   line-height: 3rem;
@@ -65,43 +67,48 @@
     }
   }
 }
-
+//  -------------------------------
 //  Footer bottom Copyright styling
 .footer-info {
   color: $dm-slate-gray;
   font-weight: 300;
-  text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+
   @include breakpoint(medium) {
     margin-bottom: 0rem;
     order: 1;
   }
 }
-
-//  Social Media Icons styling
+//  -------------------------------
+//  Social Media Horizontal styling
 .social-media-horizontal {
   height: rem-calc(30);
+  display: flex;
+  justify-content: center;
+
   @include breakpoint(medium) {
-      justify-content: right;
       order: 2;
     }
 
   ul {
     list-style: none;
     margin: 0rem;
-    text-align: center;
     li {
       margin-right: 1rem;
       display: inline-block;
       max-width: rem-calc(30);
       max-height: rem-calc(30);
     }
-  }
-  .icon {
-    display: inline-block;
-    max-width: rem-calc(30);
-    max-height: rem-calc(30);
-  }
+  }  
+}
+//  ------------------
+//  Social Media Icons
+.icon {
+  display: inline-block;
+  max-width: rem-calc(30);
+  max-height: rem-calc(30);
   svg {
     max-width: rem-calc(30);
     max-height: rem-calc(30);

@@ -27,52 +27,115 @@
   float: right;
 }
 
-//
-//  Custom area
-//  --------------------------------------
+
+// Style for Mobile Navigation Menu
+//  ------------------------------------------------------------------------------------------------
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0rem;
-  width: 100%;
+  height: rem-calc(80);
   z-index: 999;
-  .site-navigation {
-    transition: 0.4s;
-    padding: 0.5rem 0;
-    margin: 0 2rem;
-    &.scrolled-up{
-      padding: 0.5rem 0;
+  background-color: $white;
+}
+//  Mobile Logo and Menu-Icon Container
+//  -----------------------------------
+.site-title-bar {
+  margin: 1rem auto;
+  .title-bar-left {
+    margin: auto;
+  }
+  padding: 0;
+  height: rem-calc(50);
+  background-color: $white;
+  
+}
+//  Mobile Menu Icon Styleing
+//  -------------------------
+.mobile-menu-icon {
+  float: right;
+  &:before {
+    font-family: "dashicons";
+    content: "\f333";
+    color: $dm-blue;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    font-size: rem-calc(32);
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+//  Mobile Menu Logo Styling
+//  ------------------------
+.logo {
+  width: $logo-width-large;
+}
+//  Expandet Menu Style
+//  -------------------
+.site-navigation {
+  margin-top: rem-calc(-2);
+  background-color: $white;
+  ul {
+    background-color: $white;
+  }
+}
+//  Toggle Button for expanded Menu
+//  -------------------------------
+.mobile-menu{
+  .submenu-toggle{
+    background-color: $white;
+    &:after{
+      border-color: $dm-blue transparent transparent;
     }
-    &.scrolled-down{
-      padding: 0rem 0;
-    }
-    background-color: white;
-    ul {
-      background-color: white;
-    }
-    #menu-header-menue {
-      .home-button {
-        a {
-          color: $dm-blue;
-        }
-      }
-      a {
-        font-family: "Montserrat";
-        color: $dm-gray;
-      }
-      a:hover {
-        opacity: 0.6;
-      }
-    }
-    #logo-desktop{
-      padding-left: 2rem;
-      width: 30%;
+  }
+}
+
+
+// Desktop Navigation Style
+//  ------------------------------------------------------------------------------------------------
+@include breakpoint(medium) {
+
+  .site-header {
+    height: rem-calc(80);
+    background-color: transparent;
+    .site-navigation {
       transition: 0.4s;
-      &.scrolled-up{
-        width: 35%;
-      }
-      &.scrolled-down{
-        width: 25%;
+      &.scrolled-down {
+        padding: 0rem 0;
       }
     }
   }
+  // Desktop Menu Logo (left container)
+  // ---------------------------------
+  #logo-desktop{
+    padding-left: 2rem;
+    transition: 0.4s;
+    width: $logo-width-large;
+    &.scrolled-down {
+      width: $logo-width-small;
+    }
+  }
+  .logo{
+    width: 100%;    // Defines logo-image width
+    height: auto;
+  }
+  // Desktop Menu Navigation right container
+  // ---------------------------------------
+  #menu-header-menue {
+    .home-button {
+      a {
+        color: $dm-blue;
+      }
+    }
+    a {
+      font-family: "Montserrat";
+      color: $dm-gray;
+    }
+    a:hover {
+      opacity: 0.6;
+    }
+  }
+
+
 }

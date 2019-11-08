@@ -16,12 +16,12 @@ $(document).foundation();
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("mobile-menu").className = "site-navigation top-bar scrolled-down";
+  if (document.body.scrollTop > 55 || document.documentElement.scrollTop > 55) {
+    document.getElementById("mobile-menu").className = "site-navigation top-bar cell full scrolled-down";
     document.getElementById("logo-desktop").className = "site-logo scrolled-down";
 
   } else {
-    document.getElementById("mobile-menu").className = "site-navigation top-bar scrolled-up";
-    document.getElementById("logo-desktop").className = "site-logo scrolled-up";
+    document.getElementById("mobile-menu").className = "site-navigation cell full top-bar";
+    document.getElementById("logo-desktop").className = "site-logo";
   }
 }

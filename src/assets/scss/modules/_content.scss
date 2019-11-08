@@ -1,54 +1,40 @@
-.main-container {
-  @include xy-grid-container;
+//
+//  Style for the index.php
+//  ------------------------------------------------------------------------------------------------
+.content-container {
+  padding: rem-calc(120) 0 rem-calc(60); // The first rem-calc="padding-top" -> Size of Nav-Bar (80px) + distance from Menu-Slider
+
+  @include breakpoint(medium){
+    padding: rem-calc(140) 0 rem-calc(60); // The first rem-calc="padding-top" -> Size of Nav-Bar (80px) + distance from Menu-Slider
+    box-shadow: 0 0 rem-calc(25) 0 $dm-gray;
+  }
+
+  .content-grid-container{
+    margin: auto;
+  }
 }
 
-.main-grid {
-  @include xy-grid();
-  margin-top: 1rem;
 
-  @include breakpoint(medium) {
-    margin-top: 3rem;
+//  Different styling for the page.php
+//  ------------------------------------------------------------------------------------------------
+.page-content{
+  margin-bottom: 6rem;
+}
+
+//  Different styling for the single.php (Post Template)
+//  ------------------------------------------------------------------------------------------------
+.post-comments{
+  margin: 6rem 0 3rem;
+}
+
+//  Different styling for the search.php
+//  ------------------------------------------------------------------------------------------------
+#search-results{
+  margin-bottom: 6rem;
+  .entry-title{
+    margin-bottom: 1rem;
   }
-
-  &.sidebar-left {
-    // Place the sidebar below main content on small screens ...
-    @include breakpoint(small) {
-      .main-content { order: 1; }
-      .sidebar { order: 2; }
-    }
-
-    // ... and to the left on medium-up screens, when using the sidebar-left template
-    @include breakpoint(medium) {
-      .main-content { order: 2; }
-      .sidebar { order: 1; }
-    }
-  }
-
-  // Full width template
-  .main-content-full-width {
-    @include xy-cell(12);
-  }
-
-  // Default template
-  .main-content {
-    @include breakpoint(small) {
-      @include xy-cell(12);
-    }
-
-    @include breakpoint(medium) {
-      @include xy-cell(8);
-    }
-  }
-
-  .sidebar {
-    @include breakpoint(small) {
-      @include xy-cell(12);
-    }
-
-    @include breakpoint(medium) {
-      @include xy-cell(4);
-      margin-top: 1rem;
-    }
-
+  article{
+    margin: 3rem 0;
   }
 }

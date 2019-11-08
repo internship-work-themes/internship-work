@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying search results pages.
  *
@@ -8,38 +9,48 @@
 
 get_header(); ?>
 
-<div class="main-container">
-	<div class="main-grid">
-		<main id="search-results" class="main-content">
+<div class="content-container cell xxlarge-10">
+	<div class="grid-x">
 
-		<header>
-			<h1 class="entry-title"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h1>
-		</header>
+		<div class="content-grid-container cell small-10">
+			<div class="content-grid grid-x">
 
-		<?php if ( have_posts() ) : ?>
+				<main id="search-results" class="content cell medium-10">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-			<?php endwhile; ?>
+					<section class="searchbar">
+						<?php get_search_form() ?>
+					</section>
 
-			<?php else : ?>
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					<header>
+						<h1 class="entry-title"><?php _e('Search Results for', 'foundationpress'); ?> "<?php echo get_search_query(); ?>"</h1>
+					</header>
 
-		<?php endif; ?>
+					<?php if (have_posts()) : ?>
 
-		<?php
-		if ( function_exists( 'foundationpress_pagination' ) ) :
-			foundationpress_pagination();
-		elseif ( is_paged() ) :
-		?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-			</nav>
-		<?php endif; ?>
+						<?php while (have_posts()) : the_post(); ?>
+							<?php get_template_part('template-parts/content', get_post_format()); ?>
+						<?php endwhile; ?>
 
-		</main>
-	<?php get_sidebar(); ?>
+					<?php else : ?>
+						<?php get_template_part('template-parts/content', 'none'); ?>
+
+					<?php endif; ?>
+
+					<?php
+					if (function_exists('foundationpress_pagination')) :
+						foundationpress_pagination();
+					elseif (is_paged()) :
+						?>
+						<nav id="post-nav">
+							<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
+							<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
+						</nav>
+					<?php endif; ?>
+
+				</main>
+
+			</div>
+		</div>
 
 	</div>
 </div>

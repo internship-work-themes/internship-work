@@ -10,24 +10,39 @@
  */
 ?>
 
-<footer class="footer-container">
-	<div class="footer">
-		<div class="footer-grid row small-10 medium-up-2">
-			<?php dynamic_sidebar('footer-widgets'); ?>
-		</div>
+<footer class="footer-container cell full">
 
-		<div class="footer-menu row small-10 medium-12">
-			<div class="column">
-				<?php custom_footer_nav(); ?>
+	<div class="footer grid-x align-center">
+
+		<div class="footer-t cell small-10">
+			<div class="contact grid-x">
+
+				<div class="cell">
+					<div class="grid-x grid-padding-x small-up-1 medium-up-2">
+
+						<?php dynamic_sidebar('footer-widgets'); ?>
+						<div class="footer-nav cell">
+							<?php custom_footer_nav(); ?>
+						</div>
+
+					</div>
+				</div>
+
 			</div>
 		</div>
-	</div>
 
-	<div class="footer-bottom row">
-		<div class="social-media-horizontal">
-			<?php social_media_icon('social-media-r'); ?>
+
+		<div class="footer-b cell full">
+			<div class="grid-x grid-padding-x">
+				<div class="social-b cell small-10">
+					<div class="social-media-horizontal">
+						<?php echo get_social_icon_menu(); ?>
+					</div>
+					<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
+				</div>
+			</div>
 		</div>
-		<div class="footer-info">Copyright 2018 digitalmobil GmbH & Co. KG</div>
+
 	</div>
 
 </footer>
@@ -37,6 +52,7 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
+</div> <!-- Close main-grid container -->
 </div> <!-- Close div page-container -->
 </body>
 

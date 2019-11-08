@@ -61,14 +61,15 @@ require_once('library/gutenberg.php');
 /** Add Post Thumbnails for User */
 add_theme_support('post-thumbnails');
 
-/** Adding Custom Logo Support */
+
+/** 
+ * Adding Custom Logo Support 
+ */
 function theme_custom_logo_setup()
 {
     $defaults = array(
         'height' => 150,
         'width' => 150,
-        'flex-height' => true,
-        'flex-width' => true,
         'header-text' => array('site-title', 'site-description'),
     );
 
@@ -77,63 +78,66 @@ function theme_custom_logo_setup()
 
 add_action('after_setup_theme', 'theme_custom_logo_setup');
 
+
 /**
- * Adding the !SVG! logos accordingly, if the logo name is contained in the Website-URL and unique
- * EXAMPLE: https://www.facebook.com 
- *          -> Logo-Name: facebook.svg
- * $theme_location is the registered theme location from a Nav-Menu: register_nav_menus();
+ * Adding svg-logos to Social Website URLs with ACF
  */
-
-// Intented to use with locations, like 'primary'
-// clean_custom_menu("primary");
-
-function social_media_icon($theme_location)
+/** adding the options_page for ACF */
+function create_acf_social_media_options_page()
 {
-    if (($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location])) {
-        $menu = get_term($locations[$theme_location], 'nav_menu');
-        $menu_items = wp_get_nav_menu_items($menu->term_id);
-
-        $menu_list = '<ul class="' . $theme_location . '">' . "\n";
-
-        $count = 0;
-        $submenu = false;
-
-        foreach ($menu_items as $menu_item) {
-
-            $link = $menu_item->url;
-            $title = $menu_item->title;
-            $social = array("facebook", "instagram", "linkedin", "twitter", "rrd"); // list the used socialmedia names in this array
-            $link_img = "";
-            $home_url = get_home_url();
-            $i = 0;
-
-
-            for ($i, $size = count($social); $i < $size; $i++) {
-                $name = $social[$i];
-
-                if (strpos($link, $name) == true) {
-                    $link_img = '' . file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/$name.svg") . '';
-                    //$link_img = '<img class="svg" src="' . $home_url . '/app/themes/internship-work/src/assets/images/icons/' . $name . '.svg" width=30px hight=auto';
-                    $title = "";
-                    break;
-                } else {
-                    $link_img = '' . file_get_contents("$home_url/app/themes/internship-work/src/assets/images/icons/error.svg") . '';
-                    //$link_img = '<img class="svg" src="' . $home_url . '/app/themes/internship-work/src/assets/images/icons/error.svg" width=30px hight=auto';
-                }
-            }
-
-
-            if (!$menu_item->menu_item_parent) {
-
-                $menu_list .= '<li class="item">' . "\n";
-                $menu_list .= '<a href="' . $link . '" class="title">' . $link_img . ' ' . $title . '</a>' . "\n";
-            }
-            $count++;
-        }
-
-        $menu_list .= '</ul>' . "\n";
-    } else {
-        $menu_list = '<!-- no menu defined in location "' . $theme_location . '" -->';
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page(array(
+            'page_title' => 'Social Media Link Settings',
+            'menu_title' => 'Social',
+            'menu_slug'  => 'acf-social',
+            'capability' => 'edit_posts',
+            'icon_url'   => 'dashicons-share',
+            'redirect'   => false,
+        ));
     }
-    echo $menu_list;
 }
+add_action('acf/init', 'create_acf_social_media_options_page');
+
+/** Load Social Media Icon Menü */
+function get_social_icon_menu()
+{
+    if (have_rows('social_media_footer_repeater', 'option')) :
+
+        $icon_list = '<ul class="social-icons">';
+
+        while (have_rows('social_media_footer_repeater', 'option')) : the_row();
+
+            // vars
+            $name = get_sub_field('social_media_platform');
+            $link_array = get_sub_field('social_media_url');
+            $link = $link_array['url'];
+            $link_target = $link_array['target'];
+            $svg_url = '' . get_stylesheet_directory_uri() . '/src/assets/images/icons/' . $name . '.svg';
+
+            $icon_list .= '<li class="icon-element">';
+            if ($link) :
+                $icon_list .= '<a class ="icon" href="' . $link . '" target="'. $link_target .'">';
+            endif;
+
+            $icon_list .= '' . file_get_contents($svg_url) . '';
+
+            if ($link) :
+                $icon_list .= '</a>';
+            endif;
+            $icon_list .= '</li>';
+        endwhile;
+        $icon_list .= '</ul>';
+    else :
+        // no rows found
+        $icon_list = "Error loading Social Media Menu Icons!";
+    endif;
+
+    return $icon_list;
+}
+
+//Enqueue the Dashicons script
+function load_dashicons_front_end()
+{
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'load_dashicons_front_end');

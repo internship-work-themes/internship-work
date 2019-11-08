@@ -1,35 +1,36 @@
 .footer-container {
-  .footer {
-    background-color: $light-gray;
-    border-top: 2px solid $medium-gray;
-    margin-top: rem-calc(60);
-    margin-bottom: 1rem;
-    max-width: 100%;
-    .footer-grid {
-      margin-top: 3rem;
-      .column {
-        padding: 0rem;
-        margin-bottom: 2rem;
-        h6 {
-          font-size: 120%;
-        }
-        .textwidget {
-          font-weight: 300;
-          font-size: 110%;
-        }
-      }
-    }
-    .footer-menu {
-      font-weight: bold;
-      .column {
-        padding: 0rem;
-        padding-bottom: 1rem;
-      }
-      li {
-        padding-right: 1.5rem;
-      }
+  background-color: $light-gray;
+  border-top: rem-calc(2) solid $medium-gray;
+}
+
+
+//  Footer Contact Area TOP
+//  ------------------------------------------------------------------------------------------------
+.footer-t {
+  padding: 4rem 0;
+}
+//  ------
+//  Widget
+.widget_text {
+  margin-bottom: 2rem;
+  h6 {
+    font-size: 120%;
+  }
+  .textwidget {
+    font-weight: 300;
+    font-size: 110%;
+  }
+}
+//  -----------------
+//  Footer Navigation
+.footer-nav {
+  font-weight: bold;
+  ul {
+    li {
+      padding-right: 1.5rem;
       a {
         padding: 0rem;
+        font-size: 120%;
       }
       a:hover {
         opacity: 0.6;
@@ -42,63 +43,77 @@
       }
     }
   }
-  .footer-bottom {
-    background-color: white;
-    line-height: 3rem;
-    div {
-      vertical-align: middle;
-    }
-    .footer-info {
-      color: $dm-slate-gray;
-      font-weight: 300;
-      text-align: center;
-      margin-bottom: 2rem;
-      @include breakpoint(medium) {
-        color: $dm-slate-gray;
-        font-weight: 300;
-        float: left;
-        margin-bottom: 0rem;
-      }
-    }
-    .social-media-horizontal {
-      ul {
-        list-style: none;
-        margin: 0rem;
-        text-align: center;
-        li {
-          display: inline;
-          margin-right: 1rem;
-          svg {
-            width: 30px;
-            height: 30px;
-            path {
-              fill: $dm-blue;
-            }
-          }
-        }
-      }
-      @include breakpoint(medium) {
-        float: right;
-        ul {
-          list-style: none;
-          margin-bottom: 0rem;
-          li {
-            margin-left: 1rem;
-            display: inline;
-            svg {
-              width: 30px;
-              height: 30px;
-              path {
-                fill: $dm-blue;
-              }
-            }
-          }
-        }
-      }
+}
+
+
+//  Footer Social Box BOTTOM
+//  ------------------------------------------------------------------------------------------------
+.footer-b {
+  padding: 1rem 0;
+  background-color: white;
+  line-height: 3rem;
+
+  @include breakpoint(medium){
+    padding: 0.5rem 0;
+  }
+
+  .social-b {
+    margin: auto;
+
+    @include breakpoint(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
+//  -------------------------------
+//  Footer bottom Copyright styling
+.footer-info {
+  color: $dm-slate-gray;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 
-//
-//  Custom area
-//  --------------------------------------
+  @include breakpoint(medium) {
+    margin-bottom: 0rem;
+    order: 1;
+  }
+}
+//  -------------------------------
+//  Social Media Horizontal styling
+.social-media-horizontal {
+  height: rem-calc(30);
+  display: flex;
+  justify-content: center;
+
+  @include breakpoint(medium) {
+      order: 2;
+    }
+
+  ul {
+    list-style: none;
+    margin: 0rem;
+    li {
+      margin-right: 1rem;
+      display: inline-block;
+      max-width: rem-calc(30);
+      max-height: rem-calc(30);
+    }
+  }  
+}
+//  ------------------
+//  Social Media Icons
+.icon {
+  display: inline-block;
+  max-width: rem-calc(30);
+  max-height: rem-calc(30);
+  svg {
+    max-width: rem-calc(30);
+    max-height: rem-calc(30);
+    path {
+      fill: $dm-blue;
+    }
+  }
+}

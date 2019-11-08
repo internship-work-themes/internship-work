@@ -112,7 +112,7 @@ function get_social_icon_menu()
             $link_array = get_sub_field('social_media_url');
             $link = $link_array['url'];
             $link_target = $link_array['target'];
-            $svg_url = '' . get_home_url() . '/app/themes/internship-work/src/assets/images/icons/' . $name . '.svg';
+            $svg_url = '' . get_stylesheet_directory_uri() . '/src/assets/images/icons/' . $name . '.svg';
 
             $icon_list .= '<li class="icon-element">';
             if ($link) :

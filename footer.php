@@ -12,7 +12,7 @@
 
 <footer class="footer-container cell full">
 
-	<div class="footer grid-x">
+	<div class="footer grid-x align-center">
 
 		<div class="footer-t cell small-10">
 			<div class="contact grid-x">
@@ -52,7 +52,7 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
-</div> <!-- Close grid-y container -->
+</div> <!-- Close main-grid container -->
 </div> <!-- Close div page-container -->
 </body>
 

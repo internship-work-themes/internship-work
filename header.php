@@ -25,7 +25,8 @@
 		<?php get_template_part('template-parts/mobile-off-canvas'); ?>
 	<?php endif; ?>
 	<div id="page-container">
-		<div class="main-grid grid-x">
+		<div class="main-grid grid-x align-center">
+
 			<header class="site-header cell small-12 xxlarge-10" role="banner">
 				<div class="grid-x">
 					<div class="site-title-bar title-bar cell small-10" <?php foundationpress_title_bar_responsive_toggle(); ?>>

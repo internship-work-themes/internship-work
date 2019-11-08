@@ -80,6 +80,16 @@
     background-color: $white;
   }
 }
+//  Toggle Button for expanded Menu
+//  -------------------------------
+.mobile-menu{
+  .submenu-toggle{
+    background-color: $white;
+    &:after{
+      border-color: $dm-blue transparent transparent;
+    }
+  }
+}
 
 
 // Desktop Navigation Style
